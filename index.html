@@ -7,6 +7,7 @@
   <title>Georgia Sun</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="racing.css" />
+  <link rel="stylesheet" href="poker.css" />
 </head>
 <body>
 <div class="app-shell">
@@ -25,7 +26,7 @@
       <button class="nav-btn" data-view="leisure">Leisure & Society</button>
       <button class="nav-btn" data-view="ledger">Ledger</button>
     </nav>
-    <div class="sidebar-footer"><span>Prototype v0.3</span><span>48 turns / year</span></div>
+    <div class="sidebar-footer"><span>Prototype v0.4-dev</span><span>48 turns / year</span></div>
   </aside>
 
   <main class="main">
@@ -118,6 +119,34 @@
         <article class="card"><div class="section-head"><h3>Betting Record</h3><span class="badge">This session</span></div><div id="raceHistory"></div></article>
         <article class="card"><div class="section-head"><h3>Games & Tables</h3></div><div id="gamesPanel"></div></article>
       </div>
+
+      <article class="card">
+        <div class="section-head"><h3>Mill Creek Poker Table</h3><span class="badge">v0.4 dev • AI opponents</span></div>
+        <div id="pokerModule" class="poker-shell">
+          <div id="pokerBuyinPanel" class="poker-buyin">
+            <span>Buy-in</span><input id="pokerBuyIn" type="number" min="50" step="25" value="100" />
+            <button id="startPoker" class="primary-btn">Sit at Table</button>
+            <span class="muted">Texas Hold'em prototype with three county AI opponents.</span>
+          </div>
+          <div id="pokerGame" class="hidden">
+            <div class="poker-top"><div><b id="pokerPhase">Hand 1</b><div id="pokerPot" class="poker-pot">Pot: $0</div></div><button id="pokerCashOut" class="secondary-btn">Cash Out</button></div>
+            <div class="poker-table">
+              <div id="pokerSeats" class="poker-seats"></div>
+              <div class="poker-board"><div class="muted">Community Cards</div><div id="pokerBoard" class="poker-cards"></div></div>
+            </div>
+            <div id="pokerStatus" class="poker-status"></div>
+            <div id="pokerActions" class="poker-actions">
+              <button id="pokerFold" class="secondary-btn">Fold</button>
+              <button id="pokerCall" class="secondary-btn">Check / Call</button>
+              <input id="pokerRaise" type="number" min="2" value="6" />
+              <button id="pokerRaiseBtn" class="secondary-btn">Raise</button>
+            </div>
+            <div class="poker-actions"><button id="pokerNext" class="primary-btn hidden">Deal Next Hand</button></div>
+            <div id="pokerLog" class="poker-log"></div>
+          </div>
+        </div>
+      </article>
+
       <article class="card"><div class="section-head"><h3>Society</h3></div><div id="societyPanel"></div></article>
       <div id="racingPanel" class="hidden" aria-hidden="true"></div>
     </section>
@@ -133,5 +162,6 @@
 </div>
 <script src="app.js"></script>
 <script src="racing.js"></script>
+<script src="poker.js"></script>
 </body>
 </html>

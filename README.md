@@ -6,7 +6,7 @@
 
 Georgia Sun is a browser-based historical economic, estate, community, and life simulation set in a fictional 19th-century Georgia county.
 
-## Current prototype — v0.6-dev
+## Current prototype — v0.7-dev
 
 Georgia Sun is intentionally **menu-driven**, not a city builder. The player is meant to live inside the county economy over a long save, making financial, agricultural, social, industrial, gambling, and political choices while the surrounding world develops independently.
 
@@ -49,7 +49,15 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 - four Quick Races per turn followed by one unlocked Main Event
 - dynamic horse form, age, fitness, fatigue, confidence, injury, career records, and changing odds
 - Win / Place / Show wagering
-- AI Texas Hold'em table with estate-funded buy-ins and three county opponents
+- hardened four-player AI Texas Hold'em table with rotating blinds and real betting order
+- proper check/call/fold/raise/all-in actions
+- raises reopen action correctly
+- main pots and side pots based on actual player contributions
+- stack-aware opponents with distinct aggression, bluff and patience profiles
+- persistent opponent memory and career records
+- player poker history, wins/losses, biggest pot, buy-ins, cash-outs and raise-frequency tracking
+- **Buy In With All Cash** option, allowing the player to risk the estate's entire current liquid cash balance
+- poker losses remain part of the same estate economy rather than isolated minigame currency
 - poker card faces display `10` rather than programmer shorthand `T`
 - chess, checkers, and backgammon side activities
 - random private events and decision popups
@@ -60,6 +68,7 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 - [`docs/ESTATE_ECONOMY.md`](docs/ESTATE_ECONOMY.md) — land, provisions, livestock, liquidity, debt, foreclosure, and crop opportunity cost
 - [`docs/OPERATING_ESTATE.md`](docs/OPERATING_ESTATE.md) — operating stores, detailed expenses, livestock cycles, field condition, rotation, and soil pressure
 - [`docs/HORSE_RACING.md`](docs/HORSE_RACING.md) — persistent racing circuit, race limits, horse development, and odds
+- [`docs/POKER.md`](docs/POKER.md) — table rules, all-ins, side pots, persistent opponents, player statistics, and financial risk
 - [`ROADMAP.md`](ROADMAP.md) — remaining build slices
 
 ## Run locally
@@ -77,7 +86,7 @@ GitHub Pages configuration:
 
 ## Third-party notices
 
-See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). The poker development pass reviewed the MIT-licensed `dnevins/poker` project as a technical reference; Georgia Sun's current poker prototype is project-specific code.
+See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). The poker development pass reviewed the MIT-licensed `dnevins/poker` project as a technical reference; Georgia Sun's current poker implementation is project-specific code.
 
 ## License
 

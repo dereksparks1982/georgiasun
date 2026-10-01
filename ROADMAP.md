@@ -2,7 +2,7 @@
 
 This roadmap separates systems that are already playable from systems that are planned. The design target is a long-form menu simulation where a single save can plausibly last hundreds of turns and many real-world hours.
 
-## Live in v0.3
+## Live in v0.4-dev
 
 - 4 turns per month / 48 turns per year
 - cash, debt, estate value, revenue, expenses, ledger
@@ -17,24 +17,44 @@ This roadmap separates systems that are already playable from systems that are p
 - separate reputation with planters, merchants, officials, and townspeople
 - enslaved-community trust, fear, resentment, health, food, and unrest variables
 - generated newspaper every turn with archive
-- live horse racing system
-  - Quick Race around 30 seconds
-  - Main Event around 60 seconds
-  - six horses
-  - Win / Place / Show betting
-  - odds and betting limits
-  - form history
-  - jockeys
-  - condition
-  - track surface
-  - race distance
-  - stamina / fatigue
-  - late kick
-  - bad starts, bursts and stumbles
-  - betting history
 - chess, checkers, and backgammon side activities
 - estate improvements and equipment condition
 - random decisions and private events
+
+### Persistent horse-racing circuit
+
+The racing system now treats horses as recurring animals rather than disposable random entries.
+
+Current rules and systems:
+
+- regional roster of persistent named horses
+- four Quick Races maximum per game turn
+- Main Event remains locked until all four Quick Races have been completed
+- one Main Event maximum per turn
+- allowances reset when the player advances the game turn
+- Quick Race approximately 30 seconds
+- Main Event approximately 60 seconds
+- six horses per field
+- Win / Place / Show wagering
+- separate Quick Race and Main Event betting caps
+- persistent age
+- permanent base traits for speed, stamina, consistency, late kick, starting ability, preferred surface and preferred distance
+- fitness, fatigue, confidence, health and injury state
+- recent form and career record
+- wins, places, shows, starts and earnings
+- young-horse development, prime years and age-related decline
+- post-race fatigue and fitness loss
+- recovery between game turns
+- minor injury risk, recovery and temporary performance penalties
+- dynamic field selection from healthy / available horses
+- Main Event field weighted toward stronger and in-form horses
+- dynamic odds recalculated for each field from ability, recent form, fitness, fatigue, confidence, surface, distance and market noise
+- implied probability displayed with the odds
+- odds and visible condition change as horses race and their careers develop
+- race-engine effects for late kick, stamina, surface preference, distance preference, bursts and stumbles
+- session betting history
+
+See `docs/HORSE_RACING.md` for the full design specification.
 
 ## In development — v0.4
 
@@ -49,7 +69,7 @@ Current development build includes a first playable Texas Hold'em table inside L
 - fold / check-call / raise
 - AI personalities and aggression
 - seven-card hand evaluation
-- showdown and split-pot handling at the prototype level
+- showdown and prototype split-pot handling
 - cash-out back into estate funds
 
 Next poker work:
@@ -61,7 +81,7 @@ Next poker work:
 - AI difficulty tiers
 - table stakes by venue
 - private games and invitations
-- gambling debts and bookmaker / creditor pressure
+- gambling debts and creditor pressure
 - hand history and long-term poker statistics
 - social consequences for winning, cheating accusations, drunken play or unpaid debts
 
@@ -193,6 +213,7 @@ Current newspapers are generated each turn. Planned depth:
 - contradictory reporting
 - delayed national and foreign news
 - selectable archived issues
+- race previews, tips, scratches and Main Event coverage tied to the persistent racing roster
 
 ### Character and memory system
 
@@ -245,17 +266,31 @@ Important outcomes should emerge from several variables rather than one morality
 
 ### Leisure, gambling, and wealth destruction
 
-Already live: progress-bar horse racing, Win / Place / Show wagers, chess, checkers, backgammon, and a first AI poker build.
+Already live: persistent progress-bar horse racing, Win / Place / Show wagers, four-race preliminaries leading to one Main Event, chess, checkers, backgammon, and a first AI poker build.
 
-Roadmapped:
+Roadmapped racing depth:
 
 - Exacta
 - Quinella
 - Daily Double
-- owned racehorses
-- horse breeding and training
+- richer odds market and public betting movement
+- newspaper handicapping and rumors
+- scratches before post time
+- named owners and trainers
+- player-owned racehorses
+- buying and selling horses
+- breeding and pedigrees
+- training schedules
 - jockey contracts
-- race meetings and purses
+- purse money and entry fees
+- race classes and eligibility
+- veterinarian costs
+- serious injuries and retirement
+- seasonal race calendar
+- stable reputation
+
+Roadmapped leisure depth:
+
 - deeper poker AI
 - dice and period card games
 - chess, checkers, and backgammon skill growth
@@ -315,3 +350,4 @@ A prosperous player should be fully capable of squandering a fortune.
 7. Reputation is audience-specific.
 8. Historical terminology should match the place, year, and institution rather than using modern catch-all labels.
 9. Long saves should generate memorable personal history, not merely bigger numbers.
+10. Recurring simulation entities should persist and develop over time rather than being regenerated without history.

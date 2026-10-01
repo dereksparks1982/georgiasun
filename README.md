@@ -6,9 +6,9 @@
 
 Georgia Sun is a browser-based historical economic, estate, community, and life simulation set in a fictional 19th-century Georgia county.
 
-## Current prototype — v0.2
+## Current prototype — v0.4-dev
 
-Georgia Sun is intentionally **menu-driven**, not a city builder. The player is meant to live inside the county economy over a long save, making financial, agricultural, social, industrial, and political choices while the surrounding world develops independently.
+Georgia Sun is intentionally **menu-driven**, not a city builder. The player is meant to live inside the county economy over a long save, making financial, agricultural, social, industrial, gambling, and political choices while the surrounding world develops independently.
 
 ### Time
 
@@ -30,9 +30,13 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 - shipping missions from Savannah
 - labor, food, health, injury, trust, fear, resentment, and unrest variables
 - separate public reputation with planters, merchants, officials, and townspeople
-- horse-race wagering
+- generated newspaper every turn with county news, business, society, agriculture, markets, and archive
+- **live horse racing** with Quick Race (~30 seconds) and Main Event (~60 seconds)
+- six-horse progress-bar races
+- win / place / show wagering
+- odds, form history, jockeys, horse condition, track surface, race distance, late kicks, fatigue, stumbles, and betting history
 - poker, chess, checkers, and backgammon side activities
-- generated newspaper every turn with county news, business, society, agriculture, markets, and an archive
+- **v0.4-dev AI Texas Hold'em table** with a player buy-in, three county AI opponents, blinds, flop/turn/river progression, betting, folding, raising, hand evaluation, and cash-out back to the estate
 - random private events and decision popups
 - responsive desktop/mobile interface
 
@@ -52,6 +56,10 @@ GitHub Pages configuration:
 ## Roadmap
 
 See [`ROADMAP.md`](ROADMAP.md) for implemented, next, and long-term systems.
+
+## Third-party notices
+
+See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). The poker development pass reviewed the MIT-licensed `dnevins/poker` project as a technical reference; Georgia Sun's current poker prototype is project-specific code.
 
 ## License
 

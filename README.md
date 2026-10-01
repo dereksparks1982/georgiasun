@@ -2,6 +2,8 @@
 
 **Play the web app:** https://dereksparks1982.github.io/georgiasun/
 
+> **Proprietary software — All Rights Reserved.** This repository is public for access to the hosted web app and source visibility only. No open-source license is granted. Commercial use, redistribution, modification, derivative works, sublicensing, or reuse of the source or project materials is not authorized except for the limited platform-level rights required by GitHub's Terms of Service. See [`LICENSE`](LICENSE).
+
 A browser-based historical estate, market, and finance simulation prototype.
 
 ## Current prototype
@@ -46,3 +48,7 @@ The repository is static and ready for GitHub Pages. Use:
 ## Project direction
 
 The prototype is a systems skeleton. Planned depth can include named characters, merchants and haggling, weather history, soil quality, contracts, loans, crop futures, property taxes, detailed inventories, household finances, legal changes, regional events, more shipping routes, and save/load support.
+
+## License
+
+Copyright © 2026 Derek Sparks. All rights reserved. Georgia Sun is proprietary software and is **not open source**. See [`LICENSE`](LICENSE) for the full terms.

@@ -2,7 +2,7 @@
 
 This roadmap separates systems that are already playable from systems that are planned. The design target is a long-form menu simulation where a single save can plausibly last hundreds of turns and many real-world hours.
 
-## Live in v0.2
+## Live in v0.3
 
 - 4 turns per month / 48 turns per year
 - cash, debt, estate value, revenue, expenses, ledger
@@ -17,10 +17,55 @@ This roadmap separates systems that are already playable from systems that are p
 - separate reputation with planters, merchants, officials, and townspeople
 - enslaved-community trust, fear, resentment, health, food, and unrest variables
 - generated newspaper every turn with archive
-- horse-race wagering
-- poker, chess, checkers, and backgammon side activities
+- live horse racing system
+  - Quick Race around 30 seconds
+  - Main Event around 60 seconds
+  - six horses
+  - Win / Place / Show betting
+  - odds and betting limits
+  - form history
+  - jockeys
+  - condition
+  - track surface
+  - race distance
+  - stamina / fatigue
+  - late kick
+  - bad starts, bursts and stumbles
+  - betting history
+- chess, checkers, and backgammon side activities
 - estate improvements and equipment condition
 - random decisions and private events
+
+## In development — v0.4
+
+### AI poker table
+
+Current development build includes a first playable Texas Hold'em table inside Leisure & Society:
+
+- estate-funded buy-in
+- player plus three county AI opponents
+- blinds
+- preflop / flop / turn / river
+- fold / check-call / raise
+- AI personalities and aggression
+- seven-card hand evaluation
+- showdown and split-pot handling at the prototype level
+- cash-out back into estate funds
+
+Next poker work:
+
+- harden betting-round logic so raises can reopen action correctly
+- side pots and proper all-in behavior
+- persistent named opponents with memory and relationships
+- tells, bluff tendencies and player notes
+- AI difficulty tiers
+- table stakes by venue
+- private games and invitations
+- gambling debts and bookmaker / creditor pressure
+- hand history and long-term poker statistics
+- social consequences for winning, cheating accusations, drunken play or unpaid debts
+
+The development pass reviewed `dnevins/poker` as an MIT-licensed technical reference. See `THIRD_PARTY_NOTICES.md`.
 
 ## Next build priorities
 
@@ -200,10 +245,18 @@ Important outcomes should emerge from several variables rather than one morality
 
 ### Leisure, gambling, and wealth destruction
 
+Already live: progress-bar horse racing, Win / Place / Show wagers, chess, checkers, backgammon, and a first AI poker build.
+
+Roadmapped:
+
+- Exacta
+- Quinella
+- Daily Double
 - owned racehorses
 - horse breeding and training
+- jockey contracts
 - race meetings and purses
-- deeper poker system
+- deeper poker AI
 - dice and period card games
 - chess, checkers, and backgammon skill growth
 - private clubs

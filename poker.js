@@ -11,7 +11,7 @@
   const el=id=>document.getElementById(id);
   function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
   function deck(){return shuffle(RANKS.flatMap((r,ri)=>SUITS.map(s=>({r,s,v:ri+2}))))}
-  function cardHTML(c,down=false){if(down)return '<span class="playing-card back">?</span>';const red=c.s==='♥'||c.s==='♦';return `<span class="playing-card ${red?'red':''}">${c.r}${c.s}</span>`}
+  function cardHTML(c,down=false){if(down)return '<span class="playing-card back">?</span>';const red=c.s==='♥'||c.s==='♦';const face=c.r==='T'?'10':c.r;return `<span class="playing-card ${red?'red':''}">${face}${c.s}</span>`}
   function log(t){if(!G)return;G.log.unshift(t);G.log=G.log.slice(0,30)}
   function rank5(cards){
     const vals=cards.map(c=>c.v).sort((a,b)=>b-a);const counts={};vals.forEach(v=>counts[v]=(counts[v]||0)+1);
@@ -53,10 +53,7 @@
     if(call>0){const paid=pay(p,call);log(`${p.name} calls ${paid}.`)}else log(`${p.name} checks.`)
   }
   function runAiStreet(){for(let i=1;i<G.players.length;i++)aiAct(G.players[i]);resolveStreet()}
-  function autoFinishAfterFold(){
-    let safety=0;
-    while(G&&!G.finished&&G.players[0].folded&&safety<6){runAiStreet();safety++}
-  }
+  function autoFinishAfterFold(){let safety=0;while(G&&!G.finished&&G.players[0].folded&&safety<6){runAiStreet();safety++}}
   function playerAction(kind){if(!G||G.finished)return;const p=G.players[0],call=Math.max(0,G.currentBet-p.bet);
     if(kind==='fold'){p.folded=true;log('You fold.')}else if(kind==='call'){if(call>0){const x=pay(p,call);log(`You call ${x}.`)}else log('You check.')}else if(kind==='raise'){const target=Math.max(G.currentBet+2,Math.floor(Number(el('pokerRaise').value)||G.currentBet+2));const add=Math.max(0,target-p.bet);const x=pay(p,add);G.currentBet=Math.max(G.currentBet,p.bet);log(`You raise ${x}.`)}
     runAiStreet();autoFinishAfterFold();renderPoker();
@@ -80,3 +77,5 @@
   function init(){if(!el('pokerModule'))return;el('startPoker').onclick=startTable;el('pokerFold').onclick=()=>playerAction('fold');el('pokerCall').onclick=()=>playerAction('call');el('pokerRaiseBtn').onclick=()=>playerAction('raise');el('pokerNext').onclick=nextHand;el('pokerCashOut').onclick=cashOut}
   init();
 })();
+
+const estateModule=document.createElement('script');estateModule.src='estate.js';document.body.appendChild(estateModule);

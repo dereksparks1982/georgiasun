@@ -84,5 +84,6 @@ estateModule.onload=()=>{
   const version=document.querySelector('.sidebar-footer span:first-child');if(version)version.textContent='Prototype v0.5-dev';
   const advance=document.getElementById('advanceTurn');
   if(advance){const estateAdvance=advance.onclick;advance.onclick=()=>{const modal=document.getElementById('decisionModal');if(modal&&!modal.classList.contains('hidden'))return toast('Resolve the pending decision first.');estateAdvance();}}
+  const operatingModule=document.createElement('script');operatingModule.src='operating.js';document.body.appendChild(operatingModule);
 };
 document.body.appendChild(estateModule);

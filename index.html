@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#14100b" />
   <title>Georgia Sun</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="racing.css" />
 </head>
 <body>
 <div class="app-shell">
@@ -24,7 +25,7 @@
       <button class="nav-btn" data-view="leisure">Leisure & Society</button>
       <button class="nav-btn" data-view="ledger">Ledger</button>
     </nav>
-    <div class="sidebar-footer"><span>Prototype v0.2</span><span>48 turns / year</span></div>
+    <div class="sidebar-footer"><span>Prototype v0.3</span><span>48 turns / year</span></div>
   </aside>
 
   <main class="main">
@@ -92,8 +93,33 @@
     </section>
 
     <section id="leisure" class="view">
-      <div class="two-col"><article class="card"><div class="section-head"><h3>Horse Racing</h3><span class="badge">Wager at your own risk</span></div><div id="racingPanel"></div></article><article class="card"><div class="section-head"><h3>Games & Tables</h3></div><div id="gamesPanel"></div></article></div>
+      <article class="card race-card">
+        <div class="section-head"><h3>Mill Creek Race Grounds</h3><span class="badge">Live progress-bar racing</span></div>
+        <div id="horseRacingModule">
+          <div class="race-mode-grid">
+            <button class="race-mode active" data-race-mode="quick"><b>Quick Race</b><span>≈ 30 seconds • local purse • lower limits</span></button>
+            <button class="race-mode" data-race-mode="main"><b>Main Event</b><span>≈ 60 seconds • major meet • larger limits</span></button>
+          </div>
+          <div class="race-meta" id="raceMeta"></div>
+          <div id="raceField"></div>
+          <div class="race-bet-panel">
+            <label>Horse<select id="raceHorseSelect"></select></label>
+            <label>Bet<select id="raceBetType"><option value="win">Win</option><option value="place">Place</option><option value="show">Show</option></select></label>
+            <label>Wager<input id="raceWager" type="number" min="1" step="1" value="25" /></label>
+            <button id="newRaceField" class="secondary-btn">New Field</button>
+            <button id="startHorseRace" class="primary-btn">Place Bet & Run Race</button>
+          </div>
+          <div id="raceStatus" class="race-status">Choose a race, study the field, and place a wager.</div>
+          <div id="raceBars" class="race-bars"></div>
+        </div>
+      </article>
+
+      <div class="two-col">
+        <article class="card"><div class="section-head"><h3>Betting Record</h3><span class="badge">This session</span></div><div id="raceHistory"></div></article>
+        <article class="card"><div class="section-head"><h3>Games & Tables</h3></div><div id="gamesPanel"></div></article>
+      </div>
       <article class="card"><div class="section-head"><h3>Society</h3></div><div id="societyPanel"></div></article>
+      <div id="racingPanel" class="hidden" aria-hidden="true"></div>
     </section>
 
     <section id="ledger" class="view">
@@ -106,5 +132,6 @@
   </main>
 </div>
 <script src="app.js"></script>
+<script src="racing.js"></script>
 </body>
 </html>

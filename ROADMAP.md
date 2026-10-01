@@ -1,158 +1,276 @@
 # Georgia Sun Roadmap
 
-This roadmap separates systems that are already playable from systems that are planned. The design target is a long-form menu simulation where a single save can plausibly last hundreds of turns and many real-world hours.
+Georgia Sun is being built by consuming this roadmap one slice at a time. Systems that become playable move out of the roadmap and into the live-build documentation.
 
-## Live in v0.4-dev
+## Live now — v0.5-dev
 
+### Core simulation
 - 4 turns per month / 48 turns per year
 - cash, debt, estate value, revenue, expenses, ledger
-- seed and commodity price movement
-- imperfect forecasts, merchant gossip, heat, drought, wet, and ideal weather outcomes
-- cotton, sugar cane, corn, and rice acreage allocation
-- sugar works
-- timber cutting and sawmill production
-- apiary, honey, and beeswax
-- gristmill and bakery production chains
-- Savannah shipping missions
-- separate reputation with planters, merchants, officials, and townspeople
-- enslaved-community trust, fear, resentment, health, food, and unrest variables
+- imperfect forecasts and merchant gossip
+- heat, drought, wet and ideal weather outcomes
+- shipping missions from Savannah
 - generated newspaper every turn with archive
-- chess, checkers, and backgammon side activities
-- estate improvements and equipment condition
+- separate public reputation groups
+- labor, health, food, injury, trust, fear, resentment and unrest variables
 - random decisions and private events
 
-### Persistent horse-racing circuit
+### Agriculture and estate land
+- finite single-estate ceiling of 10,000 acres
+- progressively more expensive 100-acre acquisitions
+- cultivated fields, woodland, pasture, wetland/low ground, orchard/garden and infrastructure
+- divisible acreage inside each land category
+- competing pasture uses for cattle, goats, sheep, hay and apiary forage
+- competing woodland uses for timber, firewood, hunting, apiary forage and reserve
+- competing wetland uses for rice/water support, marsh plants, seasonal grazing and reserve
+- orchard/garden uses for fruit, berries, kitchen garden, herbs and apiary sites
+- cultivated acreage shared across the crop catalog
+- cotton, sugar cane, corn, rice, wheat, oats, barley, rye, potatoes, sweet potatoes, field peas, beans, strawberries and melons
+- livestock purchases for cattle, goats, sheep, pigs and chickens
+- recurring provisioning burden
+- internally produced food reducing cash purchases
+- animal-feed pressure
+- maintenance/tax/livestock overhead
+- solvency states
+- estate-backed borrowing
+- leverage limits
+- arrears tracking
+- foreclosure at sustained extreme leverage
+- game continuation after estate loss
 
-The racing system now treats horses as recurring animals rather than disposable random entries.
+See `docs/ESTATE_ECONOMY.md`.
 
-Current rules and systems:
+### Industry
+- sugar works
+- timber and sawmill production
+- apiary, honey and beeswax
+- gristmill
+- bakery
 
-- regional roster of persistent named horses
-- four Quick Races maximum per game turn
-- Main Event remains locked until all four Quick Races have been completed
-- one Main Event maximum per turn
-- allowances reset when the player advances the game turn
-- Quick Race approximately 30 seconds
-- Main Event approximately 60 seconds
-- six horses per field
-- Win / Place / Show wagering
-- separate Quick Race and Main Event betting caps
-- persistent age
-- permanent base traits for speed, stamina, consistency, late kick, starting ability, preferred surface and preferred distance
-- fitness, fatigue, confidence, health and injury state
-- recent form and career record
-- wins, places, shows, starts and earnings
-- young-horse development, prime years and age-related decline
-- post-race fatigue and fitness loss
-- recovery between game turns
-- minor injury risk, recovery and temporary performance penalties
-- dynamic field selection from healthy / available horses
-- Main Event field weighted toward stronger and in-form horses
-- dynamic odds recalculated for each field from ability, recent form, fitness, fatigue, confidence, surface, distance and market noise
-- implied probability displayed with the odds
-- odds and visible condition change as horses race and their careers develop
-- race-engine effects for late kick, stamina, surface preference, distance preference, bursts and stumbles
-- session betting history
+### Horse racing
+- persistent regional horse roster
+- four Quick Races per turn
+- Main Event unlocked only after four Quick Races
+- one Main Event per turn
+- changing form, age, fitness, fatigue, confidence and health
+- injuries and recovery
+- dynamic odds and implied probability
+- surface and distance preferences
+- Win / Place / Show betting
+- race history
 
-See `docs/HORSE_RACING.md` for the full design specification.
+See `docs/HORSE_RACING.md`.
 
-## In development — v0.4
+### Poker and leisure
+- playable AI Texas Hold'em prototype
+- three county AI opponents
+- estate-funded buy-ins
+- blinds, flop, turn and river
+- fold, check/call and raise
+- hand evaluation and showdown
+- chess, checkers and backgammon side activities
 
-### AI poker table
+## Next build slice — operating estate depth
 
-Current development build includes a first playable Texas Hold'em table inside Leisure & Society:
+The current estate economy works, but several costs are still aggregated. The next slice should make the financial machine more visible and more dangerous.
 
-- estate-funded buy-in
-- player plus three county AI opponents
-- blinds
-- preflop / flop / turn / river
-- fold / check-call / raise
-- AI personalities and aggression
-- seven-card hand evaluation
-- showdown and prototype split-pot handling
-- cash-out back into estate funds
+### Detailed operating ledger
+- purchased food by category
+- salt
+- clothing and cloth
+- shoes
+- tools
+- nails and hardware
+- wagon maintenance
+- harness and tack
+- seed purchases
+- medical expense
+- veterinary expense
+- fuel / firewood
+- building maintenance
+- mill maintenance
+- spoilage and storage loss
+- freight charges
+- merchant commissions
+- taxes and assessments
+- interest expense
+- hired specialists
+- emergency purchases
 
-Next poker work:
+### Provision inventories
+- meat
+- flour
+- grain
+- vegetables
+- fruit
+- salt
+- animal feed
+- hay
+- household goods
+- consumption by turn
+- spoilage
+- emergency market purchases
+- ration quality interacting with health and unrest
 
-- harden betting-round logic so raises can reopen action correctly
-- side pots and proper all-in behavior
-- persistent named opponents with memory and relationships
-- tells, bluff tendencies and player notes
-- AI difficulty tiers
+### Livestock depth
+- breeding
+- births
+- age
+- death
+- illness
+- milk
+- eggs
+- meat
+- wool
+- hides
+- draft animals
+- carrying capacity
+- winter feed
+- market sales
+- veterinary care
+
+### Field condition
+- named or numbered fields
+- fertility
+- soil moisture
+- erosion
+- previous crop
+- fallow periods
+- crop rotation
+- pest pressure
+- disease pressure
+- soil-improving crops
+- drainage
+
+## Poker hardening slice
+
+- proper reopened betting after raises
+- proper all-in behavior
+- side pots
+- stack-aware AI
+- stronger bluff and value-bet logic
+- persistent named opponents
+- opponent memory
+- tells and tendencies
+- private games
 - table stakes by venue
-- private games and invitations
-- gambling debts and creditor pressure
-- hand history and long-term poker statistics
-- social consequences for winning, cheating accusations, drunken play or unpaid debts
+- gambling debts
+- creditor pressure
+- hand history
+- long-term statistics
+- social consequences
 
-The development pass reviewed `dnevins/poker` as an MIT-licensed technical reference. See `THIRD_PARTY_NOTICES.md`.
+The long-term rule remains that the game does not protect the player from financial recklessness. If enough credit and a sufficiently wealthy table exist, the player should be capable of gambling away a fortune.
 
-## Next build priorities
+## Agriculture expansion slice
 
-### Full Georgia agriculture catalog
+The crop system is now broader but still only the beginning.
 
-Move crops into data-driven categories so the game can support a much broader historically plausible catalog without hardcoding every plant.
-
-Planned categories:
-
-- field crops
-- grains
+### Additional crop database
 - vegetables
 - berries and small fruit
 - orchard crops
 - nuts
 - herbs
 - medicinal plants
-- wetland crops and useful marsh plants
+- wetland plants
 - specialty / imported crops
+- marsh-mallow (`Althaea officinalis`)
 
-Specific requested additions include strawberries and marsh-mallow (`Althaea officinalis`) for historical confectionery production.
-
-Each crop should eventually track:
-
+### Crop data still needed
 - planting window
 - harvest window
+- time to maturity
 - soil preference
+- drainage requirement
 - water demand
+- drought tolerance
 - heat tolerance
 - frost sensitivity
 - labor requirement
-- seed cost
+- seed / propagation cost
 - storage life
-- pests and disease
+- spoilage
+- pests
+- disease
 - processing uses
-- local and export prices
+- food value
+- feed value
+- soil effects
+- local price
+- export price
 
-### Deeper production chains
+## Production-chain slice
 
 - expanded grain milling
 - commercial bakery
-- confectionery and historical marshmallow production
 - preserves
 - orchard processing
-- expanded lumber grades and timber contracts
+- confectionery
+- historical marshmallow production
+- beeswax candles
+- expanded lumber grades
+- timber contracts
 - tavern / inn supply chains
-- distilling where historically appropriate to the selected year and location
-- candles and other beeswax uses
+- distilling where historically appropriate
+- livestock processing
+- leather / hides where appropriate
 
-### Broker and investments
+## Finance and investment slice
 
-- named brokers
+- named bankers and brokers
 - delayed orders
 - broker fees
 - railroad bonds
 - bank shares
-- canal / infrastructure debt where appropriate
+- infrastructure debt where appropriate
 - shipping-company investments
-- coupon payments and dividends
-- defaults and bank failures
-- newspaper rumors and incomplete financial information
+- coupon payments
+- dividends
+- defaults
+- bank failures
+- mortgages with named creditors
+- refinancing
+- foreclosures and auctions
+- insurance
+- merchant credit
+- crop liens / advances where historically appropriate
+- rumors and incomplete financial information
 
-### Associations & societies
+## Living county slice
 
-Do not use generic "guild" terminology unless a specific historical organization actually used it.
+### People and businesses
+- persistent merchants
+- bankers
+- newspaper editors
+- officials
+- neighboring landowners
+- innkeepers
+- physicians
+- lawyers
+- craftsmen
+- trainers and jockeys
+- businesses opening and closing
+- liquidity and bankruptcy for NPC businesses
 
-Planned organization types:
+### Town development
+- population growth and decline
+- major employers
+- mills
+- warehouses
+- hotels / taverns
+- fairs
+- race grounds
+- roads
+- bridges
+- railroad depots
+- freight access
+- rival towns
+- ghost-town outcomes
+
+## Associations and societies slice
+
+Use historically appropriate names rather than generic "guild" terminology.
 
 - agricultural societies
 - merchant associations
@@ -163,59 +281,54 @@ Planned organization types:
 - banking circles
 - trade organizations
 
-Players should be able to join, form, fund, lead, oppose, split, boycott, negotiate with, or economically compete against organizations.
+Player actions:
+- join
+- form
+- fund
+- lead
+- oppose
+- split
+- boycott
+- negotiate
+- compete economically
 
-### Local government and politics
+## Local government and politics slice
 
-- county meetings / court sessions appropriate to the place and year
-- road and bridge petitions
+- county meetings / court sessions appropriate to place and year
+- roads and bridge petitions
 - taxes and assessments
 - elections
 - appointments
 - public works
 - militia matters where historically appropriate
 - school and courthouse funding
-- lobbying and political donations
-- favors and grudges
-- reputation by constituency rather than one universal political score
+- lobbying
+- donations
+- favors
+- grudges
+- constituency-specific reputation
 
-### Living towns
+## Newspaper expansion slice
 
-Towns should not be permanent scenery. Their economies should change.
-
-Planned systems:
-
-- population growth and decline
-- major employers
-- railroad depots
-- freight access
-- mills and warehouses
-- fairs and race grounds
-- hotel / tavern demand
-- business openings and closures
-- infrastructure loss
-- rival towns
-- ghost-town outcomes when trade routes or major employers disappear
-
-### Newspaper expansion
-
-Current newspapers are generated each turn. Planned depth:
-
-- persistent named newspaper editors
-- political bias and editorial positions
-- advertisements that create opportunities
+- persistent editor
+- editorial positions
+- advertisements
 - land-for-sale notices
-- deaths and marriages
+- deaths
+- marriages
 - court notices
 - shipping arrivals
 - business failures
-- election endorsements
+- race previews
+- race tips and rumors
+- scratches
+- election coverage
 - contradictory reporting
-- delayed national and foreign news
+- delayed national news
+- delayed foreign news
 - selectable archived issues
-- race previews, tips, scratches and Main Event coverage tied to the persistent racing roster
 
-### Character and memory system
+## Character and memory slice
 
 - named player character
 - slow aging
@@ -223,131 +336,90 @@ Current newspapers are generated each turn. Planned depth:
 - inheritance
 - children
 - neighboring families
-- merchants
-- bankers
-- officials
-- newspaper editors
 - hired workers
 - enslaved families
-- individual memories of important events
+- individual memories
 - relationship histories
-- feuds
 - favors owed
+- feuds
 - scandal
 - marriage prospects
 
-### Reputation and power
+## Horse ownership slice
 
-Expand current separate reputation values into a deeper network.
-
-Public groups:
-
-- planters
-- merchants
-- bankers
-- county officials
-- ordinary townspeople
-- churches
-- associations and societies
-
-Estate community variables:
-
-- trust
-- fear
-- resentment
-- family stability
-- health
-- hope
-- perceived opportunity to escape
-- knowledge of escape routes and contacts
-- resistance pressure
-
-Important outcomes should emerge from several variables rather than one morality or rebellion meter.
-
-### Leisure, gambling, and wealth destruction
-
-Already live: persistent progress-bar horse racing, Win / Place / Show wagers, four-race preliminaries leading to one Main Event, chess, checkers, backgammon, and a first AI poker build.
-
-Roadmapped racing depth:
-
+- named owners and trainers
+- buying and selling horses
+- player-owned stable
+- breeding
+- pedigrees
+- training schedules
+- jockey contracts
+- entry fees
+- purses
+- race classes
+- eligibility
+- serious injuries
+- retirement
+- seasonal race calendar
+- stable reputation
 - Exacta
 - Quinella
 - Daily Double
-- richer odds market and public betting movement
-- newspaper handicapping and rumors
-- scratches before post time
-- named owners and trainers
-- player-owned racehorses
-- buying and selling horses
-- breeding and pedigrees
-- training schedules
-- jockey contracts
-- purse money and entry fees
-- race classes and eligibility
-- veterinarian costs
-- serious injuries and retirement
-- seasonal race calendar
-- stable reputation
+- public betting movement
+- bookmaker liquidity
 
-Roadmapped leisure depth:
+## Historical pressure and long timeline
 
-- deeper poker AI
-- dice and period card games
-- chess, checkers, and backgammon skill growth
-- private clubs
-- fairs
-- hunting
-- dinners and parties
-- drinking
-- luxury purchases
-- carriages
-- imported furniture and clothing
-- gambling debts
-- scandals
+The outside world should increasingly interfere with estate plans rather than appearing only as scripted flavor text.
 
-A prosperous player should be fully capable of squandering a fortune.
+- regional commodity cycles
+- banking panics
+- transportation change
+- railroad expansion
+- legal change
+- taxes
+- elections
+- sectional conflict
+- trade disruption
+- shortages
+- inflation
+- military mobilization
+- conscription pressure where applicable
+- requisition
+- property destruction
+- labor disruption
+- Civil War
+- postwar legal change
+- postwar labor change
+- postwar credit and land restructuring
 
-### Long-term economy
+The Civil War era should alter prices, labor, transportation, credit, law, politics and risk across the simulation.
 
-- merchants with personalities and liquidity
-- haggling
-- repeat-customer relationships
-- contracts
-- credit terms
-- property taxes
-- insurance
-- mortgages
-- foreclosures
-- land auctions
-- crop gluts and shortages
-- regional price differences
-- transportation costs
-- railroad freight contracts
-- infrastructure disruptions
-- broader regional economic cycles
+## Later technical systems
 
-## Later
-
-- save / load and multiple named saves
+- save / load
+- multiple named saves
 - cloud saves if a backend is added
-- deeper historical event timeline
-- wars and major national disruptions
-- more ports and shipping routes
-- insurance markets
-- legal disputes and lawsuits
-- newspapers from rival towns
-- dynamic county map as data only, without turning Georgia Sun into a city builder
-- long-run statistics and family history screen
+- long-run statistics
+- family history screen
+- more ports
+- regional price differences
+- dynamic county data view without turning the game into a city builder
 
 ## Design rules
 
-1. Georgia Sun remains primarily a **menu game**.
-2. Time should move slowly enough that a player can spend 100+ hours with one character.
-3. Important outcomes should usually come from multiple interacting systems.
-4. The world continues to change outside the player's estate.
-5. Information can be incomplete, delayed, biased, or wrong.
-6. Wealth should create opportunities but also new ways to lose money.
-7. Reputation is audience-specific.
-8. Historical terminology should match the place, year, and institution rather than using modern catch-all labels.
-9. Long saves should generate memorable personal history, not merely bigger numbers.
-10. Recurring simulation entities should persist and develop over time rather than being regenerated without history.
+1. Georgia Sun remains primarily a menu game.
+2. Time moves slowly enough for 100+ hours with one character.
+3. Every acre has an opportunity cost.
+4. The player cannot plant or own everything simply by expanding forever.
+5. Assets, income and cash are different things.
+6. Running a large estate should require continuous money, labor, food, maintenance and judgment.
+7. Important outcomes come from interacting systems rather than one hidden morality or success score.
+8. The world changes outside the player's property.
+9. Information can be incomplete, delayed, biased or wrong.
+10. The game does not protect the player from bad financial decisions.
+11. Wealth creates new opportunities and new ways to fail.
+12. Reputation is audience-specific.
+13. Historical terminology should fit the time and place.
+14. Persistent entities should accumulate history rather than constantly respawning without memory.
+15. Economic failure should alter the player's life rather than automatically ending the save.

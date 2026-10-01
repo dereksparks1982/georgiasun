@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#14100b" />
+  <title>Georgia Sun</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="sun-mark">☀</div>
+        <div>
+          <h1>Georgia Sun</h1>
+          <p>Estate & market simulation</p>
+        </div>
+      </div>
+
+      <nav id="nav" class="nav">
+        <button class="nav-btn active" data-view="overview">Overview</button>
+        <button class="nav-btn" data-view="market">Market</button>
+        <button class="nav-btn" data-view="planting">Planting</button>
+        <button class="nav-btn" data-view="estate">Estate</button>
+        <button class="nav-btn" data-view="labor">Labor</button>
+        <button class="nav-btn" data-view="sugar">Sugar Works</button>
+        <button class="nav-btn" data-view="shipping">Shipping</button>
+        <button class="nav-btn" data-view="ledger">Ledger</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>Prototype v0.1</span>
+        <span>1 turn = 1 month</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Fictional Georgia estate • 1836</div>
+          <h2 id="viewTitle">Overview</h2>
+        </div>
+        <div class="turn-controls">
+          <div class="date-pill" id="datePill">March 1836</div>
+          <button id="advanceMonth" class="primary-btn">Advance Month</button>
+        </div>
+      </header>
+
+      <section id="overview" class="view active">
+        <div class="kpi-grid">
+          <article class="card kpi"><span>Cash</span><strong id="cashKpi">$0</strong><small id="cashNote">Operating reserve</small></article>
+          <article class="card kpi"><span>Debt</span><strong id="debtKpi">$0</strong><small>Interest accrues monthly</small></article>
+          <article class="card kpi"><span>Projected Net</span><strong id="netKpi">$0</strong><small id="netNote">This month</small></article>
+          <article class="card kpi"><span>Estate Value</span><strong id="estateValueKpi">$0</strong><small>Land, buildings, stock</small></article>
+        </div>
+
+        <div class="two-col">
+          <article class="card">
+            <div class="section-head"><h3>Season Outlook</h3><span class="badge">Imperfect information</span></div>
+            <div id="outlookPanel"></div>
+          </article>
+          <article class="card">
+            <div class="section-head"><h3>Estate Conditions</h3><span class="badge">Live</span></div>
+            <div id="conditionMeters"></div>
+          </article>
+        </div>
+
+        <div class="two-col wide-left">
+          <article class="card">
+            <div class="section-head"><h3>Recent Events</h3><span class="badge">History</span></div>
+            <div id="eventFeed" class="event-feed"></div>
+          </article>
+          <article class="card">
+            <div class="section-head"><h3>Quick Actions</h3></div>
+            <div class="stack-actions">
+              <button class="secondary-btn" data-go="planting">Adjust crop plan</button>
+              <button class="secondary-btn" data-go="market">Check seed & commodity prices</button>
+              <button class="secondary-btn" data-go="ledger">Review finances</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="market" class="view">
+        <div class="two-col">
+          <article class="card">
+            <div class="section-head"><h3>Seed Market</h3><span class="badge">Prices move monthly</span></div>
+            <div id="seedMarket"></div>
+          </article>
+          <article class="card">
+            <div class="section-head"><h3>Commodity Market</h3><span class="badge">Sell prices</span></div>
+            <div id="commodityMarket"></div>
+          </article>
+        </div>
+        <article class="card">
+          <div class="section-head"><h3>Merchant Gossip</h3><span class="badge">May be wrong</span></div>
+          <div id="gossipPanel" class="prose-panel"></div>
+        </article>
+      </section>
+
+      <section id="planting" class="view">
+        <div class="two-col wide-left">
+          <article class="card">
+            <div class="section-head"><h3>Crop Allocation</h3><span class="badge" id="acreageBadge">0 acres used</span></div>
+            <div id="cropControls"></div>
+          </article>
+          <article class="card">
+            <div class="section-head"><h3>Planting Strategy</h3></div>
+            <div id="strategyPanel" class="prose-panel"></div>
+          </article>
+        </div>
+        <article class="card">
+          <div class="section-head"><h3>Expected Yield</h3><span class="badge">Before weather</span></div>
+          <div id="yieldTable"></div>
+        </article>
+      </section>
+
+      <section id="estate" class="view">
+        <div class="two-col">
+          <article class="card"><div class="section-head"><h3>Land</h3></div><div id="landPanel"></div></article>
+          <article class="card"><div class="section-head"><h3>Buildings</h3></div><div id="buildingPanel"></div></article>
+        </div>
+        <article class="card">
+          <div class="section-head"><h3>Capital Improvements</h3></div>
+          <div class="action-grid">
+            <button class="secondary-btn" id="buyLand">Buy 100 acres • $2,000</button>
+            <button class="secondary-btn" id="buildWarehouse">Expand warehouse • $1,250</button>
+            <button class="secondary-btn" id="buildInfirmary">Build infirmary • $1,800</button>
+            <button class="secondary-btn" id="repairEquipment">Repair equipment • $600</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="labor" class="view">
+        <div class="kpi-grid three">
+          <article class="card kpi"><span>Enslaved Population</span><strong id="enslavedKpi">0</strong><small>Adults and children</small></article>
+          <article class="card kpi"><span>Hired Workers</span><strong id="hiredKpi">0</strong><small>Paid monthly wages</small></article>
+          <article class="card kpi"><span>Injured / Infirm</span><strong id="injuredKpi">0</strong><small>Reduced labor availability</small></article>
+        </div>
+        <div class="two-col">
+          <article class="card"><div class="section-head"><h3>Rations</h3></div><div id="rationPanel"></div></article>
+          <article class="card"><div class="section-head"><h3>Medical Care</h3></div><div id="carePanel"></div></article>
+        </div>
+        <article class="card"><div class="section-head"><h3>Current Cases</h3></div><div id="medicalCases"></div></article>
+      </section>
+
+      <section id="sugar" class="view">
+        <div class="two-col">
+          <article class="card"><div class="section-head"><h3>Sugar Mill</h3><span class="badge">High profit • high risk</span></div><div id="sugarPanel"></div></article>
+          <article class="card"><div class="section-head"><h3>Boiling House Risk</h3></div><div id="sugarRisk"></div></article>
+        </div>
+        <article class="card">
+          <div class="section-head"><h3>Mill Controls</h3></div>
+          <div class="action-grid">
+            <button class="secondary-btn" id="upgradeMill">Upgrade mill • $1,500</button>
+            <button class="secondary-btn" id="maintenanceMill">Preventive maintenance • $350</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="shipping" class="view">
+        <div class="two-col">
+          <article class="card"><div class="section-head"><h3>Fleet</h3></div><div id="fleetPanel"></div></article>
+          <article class="card"><div class="section-head"><h3>Available Trade Missions</h3></div><div id="tradeRoutes"></div></article>
+        </div>
+        <article class="card"><div class="section-head"><h3>Active Missions</h3></div><div id="activeMissions"></div></article>
+      </section>
+
+      <section id="ledger" class="view">
+        <div class="two-col">
+          <article class="card"><div class="section-head"><h3>Credit</h3></div><div id="creditPanel"></div></article>
+          <article class="card"><div class="section-head"><h3>Monthly Projection</h3></div><div id="projectionPanel"></div></article>
+        </div>
+        <article class="card">
+          <div class="section-head"><h3>Ledger</h3><span class="badge">Last 12 months</span></div>
+          <div class="table-wrap"><table><thead><tr><th>Month</th><th>Revenue</th><th>Expenses</th><th>Net</th><th>Cash</th></tr></thead><tbody id="ledgerRows"></tbody></table></div>
+        </article>
+      </section>
+
+      <div id="decisionModal" class="modal hidden" aria-hidden="true">
+        <div class="modal-card">
+          <div class="eyebrow">Decision required</div>
+          <h3 id="decisionTitle"></h3>
+          <p id="decisionText"></p>
+          <div id="decisionChoices" class="stack-actions"></div>
+        </div>
+      </div>
+
+      <div id="toast" class="toast hidden"></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 
 Georgia Sun is a browser-based historical economic, estate, community, and life simulation set in a fictional 19th-century Georgia county.
 
-## Current prototype — v0.4-dev
+## Current prototype — v0.5-dev
 
 Georgia Sun is intentionally **menu-driven**, not a city builder. The player is meant to live inside the county economy over a long save, making financial, agricultural, social, industrial, gambling, and political choices while the surrounding world develops independently.
 
@@ -22,7 +22,17 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 - fluctuating seed and commodity prices
 - imperfect almanac-style forecasts and merchant gossip
 - weather outcomes including heat, drought, wet periods, and ideal seasons
-- cotton, sugar cane, corn, and rice acreage management
+- finite estate expansion with a current 10,000-acre single-estate ceiling
+- land divided into cultivated fields, woodland, pasture, wetland/low ground, orchard/garden, and infrastructure
+- multiple competing uses inside pasture, woodland, wetland, and orchard/garden acreage
+- cultivated acreage shared across all crops so every planting choice has an opportunity cost
+- cotton, sugar cane, corn, rice, wheat, oats, barley, rye, potatoes, sweet potatoes, field peas, beans, strawberries, and melons
+- recurring estate provisioning costs influenced by population, internally produced food, livestock, stored grain, and hay
+- livestock management for cattle, goats, sheep, pigs, and chickens
+- recurring estate maintenance/tax/livestock overhead
+- solvency states from Healthy through Default
+- estate-backed borrowing and leverage limits
+- sustained-arrears foreclosure with the save continuing after property loss
 - sugar production
 - timber and sawmill system with woodland depletion
 - apiary with honey and beeswax production
@@ -31,20 +41,21 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 - labor, food, health, injury, trust, fear, resentment, and unrest variables
 - separate public reputation with planters, merchants, officials, and townspeople
 - generated newspaper every turn with county news, business, society, agriculture, markets, and archive
-- **persistent horse-racing circuit** with a regional roster of recurring horses
-- four Quick Races per turn, followed by one unlocked Main Event
-- Quick Race around 30 seconds and Main Event around 60 seconds
-- six-horse progress-bar races
+- persistent regional horse-racing circuit
+- four Quick Races per turn followed by one unlocked Main Event
+- dynamic horse form, age, fitness, fatigue, confidence, injury, career records, and changing odds
 - Win / Place / Show wagering
-- dynamic odds recalculated from ability, form, fatigue, fitness, surface, distance, and market noise
-- age, career record, recent form, confidence, fatigue, fitness, injuries, recovery, improvement, prime years, and decline
-- track surface, race distance, jockeys, late kicks, bursts, stumbles, and betting history
+- AI Texas Hold'em table with estate-funded buy-ins and three county opponents
+- poker card faces now display `10` rather than programmer shorthand `T`
 - chess, checkers, and backgammon side activities
-- **v0.4-dev AI Texas Hold'em table** with a player buy-in, three county AI opponents, blinds, flop/turn/river progression, betting, folding, raising, hand evaluation, and cash-out back to the estate
 - random private events and decision popups
 - responsive desktop/mobile interface
 
-Detailed horse-racing design notes are in [`docs/HORSE_RACING.md`](docs/HORSE_RACING.md).
+## Design documentation
+
+- [`docs/ESTATE_ECONOMY.md`](docs/ESTATE_ECONOMY.md) — land, provisions, livestock, liquidity, debt, foreclosure, and crop opportunity cost
+- [`docs/HORSE_RACING.md`](docs/HORSE_RACING.md) — persistent racing circuit, race limits, horse development, and odds
+- [`ROADMAP.md`](ROADMAP.md) — remaining build slices
 
 ## Run locally
 
@@ -58,10 +69,6 @@ GitHub Pages configuration:
 
 - Branch: `main`
 - Folder: `/ (root)`
-
-## Roadmap
-
-See [`ROADMAP.md`](ROADMAP.md) for implemented, next, and long-term systems.
 
 ## Third-party notices
 

@@ -31,14 +31,20 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 - labor, food, health, injury, trust, fear, resentment, and unrest variables
 - separate public reputation with planters, merchants, officials, and townspeople
 - generated newspaper every turn with county news, business, society, agriculture, markets, and archive
-- **live horse racing** with Quick Race (~30 seconds) and Main Event (~60 seconds)
+- **persistent horse-racing circuit** with a regional roster of recurring horses
+- four Quick Races per turn, followed by one unlocked Main Event
+- Quick Race around 30 seconds and Main Event around 60 seconds
 - six-horse progress-bar races
-- win / place / show wagering
-- odds, form history, jockeys, horse condition, track surface, race distance, late kicks, fatigue, stumbles, and betting history
-- poker, chess, checkers, and backgammon side activities
+- Win / Place / Show wagering
+- dynamic odds recalculated from ability, form, fatigue, fitness, surface, distance, and market noise
+- age, career record, recent form, confidence, fatigue, fitness, injuries, recovery, improvement, prime years, and decline
+- track surface, race distance, jockeys, late kicks, bursts, stumbles, and betting history
+- chess, checkers, and backgammon side activities
 - **v0.4-dev AI Texas Hold'em table** with a player buy-in, three county AI opponents, blinds, flop/turn/river progression, betting, folding, raising, hand evaluation, and cash-out back to the estate
 - random private events and decision popups
 - responsive desktop/mobile interface
+
+Detailed horse-racing design notes are in [`docs/HORSE_RACING.md`](docs/HORSE_RACING.md).
 
 ## Run locally
 

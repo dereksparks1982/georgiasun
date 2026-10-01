@@ -1,6 +1,9 @@
 # Georgia Sun
 
-**Play the web app:** https://dereksparks1982.github.io/georgiasun/
+## Play & related projects
+
+- **Georgia Sun web app:** https://dereksparks1982.github.io/georgiasun/
+- **Continental Electric web app:** https://dereksparks1982.github.io/continentalelectric/
 
 > **Proprietary software — All Rights Reserved.** This repository is public for access to the hosted web app and source visibility only. No open-source license is granted. Commercial use, redistribution, modification, derivative works, sublicensing, or reuse of the source or project materials is not authorized except for the limited platform-level rights required by GitHub's Terms of Service. See [`LICENSE`](LICENSE).
 

@@ -1,48 +1,76 @@
 # Georgia Sun Roadmap
 
-Georgia Sun is being built by consuming this roadmap one slice at a time. Systems that become playable move out of the roadmap and into the live-build documentation.
+Georgia Sun is being built by consuming this roadmap one slice at a time. When a system becomes playable, it moves out of the wish list and into the live-build documentation.
 
-## Live now — v0.5-dev
+## Live now — v0.6-dev
 
 ### Core simulation
 - 4 turns per month / 48 turns per year
 - cash, debt, estate value, revenue, expenses, ledger
 - imperfect forecasts and merchant gossip
-- heat, drought, wet and ideal weather outcomes
+- weather outcomes
 - shipping missions from Savannah
 - generated newspaper every turn with archive
-- separate public reputation groups
-- labor, health, food, injury, trust, fear, resentment and unrest variables
+- separate reputation groups
+- labor, health, food, injury, trust, fear, resentment and unrest
 - random decisions and private events
 
-### Agriculture and estate land
-- finite single-estate ceiling of 10,000 acres
-- progressively more expensive 100-acre acquisitions
-- cultivated fields, woodland, pasture, wetland/low ground, orchard/garden and infrastructure
-- divisible acreage inside each land category
-- competing pasture uses for cattle, goats, sheep, hay and apiary forage
-- competing woodland uses for timber, firewood, hunting, apiary forage and reserve
-- competing wetland uses for rice/water support, marsh plants, seasonal grazing and reserve
-- orchard/garden uses for fruit, berries, kitchen garden, herbs and apiary sites
-- cultivated acreage shared across the crop catalog
-- cotton, sugar cane, corn, rice, wheat, oats, barley, rye, potatoes, sweet potatoes, field peas, beans, strawberries and melons
-- livestock purchases for cattle, goats, sheep, pigs and chickens
-- recurring provisioning burden
-- internally produced food reducing cash purchases
-- animal-feed pressure
-- maintenance/tax/livestock overhead
-- solvency states
-- estate-backed borrowing
-- leverage limits
-- arrears tracking
-- foreclosure at sustained extreme leverage
-- game continuation after estate loss
+### Land, agriculture and estate economy
+- finite 10,000-acre single-estate ceiling
+- progressively more expensive land acquisition
+- cultivated, woodland, pasture, wetland, orchard/garden and infrastructure acreage
+- multiple competing uses inside each land class
+- shared cultivated acreage across the crop catalog
+- fourteen playable crops
+- livestock purchases
+- estate-backed borrowing, leverage, arrears and foreclosure
+- play continues after estate loss
 
-See `docs/ESTATE_ECONOMY.md`.
+### Operating estate depth
+- consumable stores for meat, flour, grain, vegetables, fruit, salt, feed, hay and household goods
+- turn-by-turn consumption
+- internal production offsets
+- spoilage
+- emergency market purchases at a premium
+- shortage effects on food, health and unrest
+- detailed recurring operating ledger
+- clothing and cloth
+- shoes
+- tools
+- nails and hardware
+- wagon repair
+- harness and tack
+- seed reserve
+- medical expense
+- veterinary expense
+- fuel / firewood
+- building maintenance
+- mill maintenance
+- freight
+- merchant commissions
+- taxes and assessments
+- interest expense
+- hired specialists
+- named field management blocks
+- fertility
+- soil moisture
+- erosion
+- previous crop
+- fallow periods
+- rotation
+- pest pressure
+- disease pressure
+- soil-improving peas and beans
+- livestock age, health, births and deaths
+- carrying pressure
+- milk, eggs, wool and hides
+- feed and hay demand
+
+See `docs/ESTATE_ECONOMY.md` and `docs/OPERATING_ESTATE.md`.
 
 ### Industry
 - sugar works
-- timber and sawmill production
+- timber and sawmill
 - apiary, honey and beeswax
 - gristmill
 - bakery
@@ -50,10 +78,9 @@ See `docs/ESTATE_ECONOMY.md`.
 ### Horse racing
 - persistent regional horse roster
 - four Quick Races per turn
-- Main Event unlocked only after four Quick Races
+- Main Event unlocked after four Quick Races
 - one Main Event per turn
-- changing form, age, fitness, fatigue, confidence and health
-- injuries and recovery
+- form, age, fitness, fatigue, confidence, health and injury
 - dynamic odds and implied probability
 - surface and distance preferences
 - Win / Place / Show betting
@@ -68,81 +95,9 @@ See `docs/HORSE_RACING.md`.
 - blinds, flop, turn and river
 - fold, check/call and raise
 - hand evaluation and showdown
-- chess, checkers and backgammon side activities
+- chess, checkers and backgammon
 
-## Next build slice — operating estate depth
-
-The current estate economy works, but several costs are still aggregated. The next slice should make the financial machine more visible and more dangerous.
-
-### Detailed operating ledger
-- purchased food by category
-- salt
-- clothing and cloth
-- shoes
-- tools
-- nails and hardware
-- wagon maintenance
-- harness and tack
-- seed purchases
-- medical expense
-- veterinary expense
-- fuel / firewood
-- building maintenance
-- mill maintenance
-- spoilage and storage loss
-- freight charges
-- merchant commissions
-- taxes and assessments
-- interest expense
-- hired specialists
-- emergency purchases
-
-### Provision inventories
-- meat
-- flour
-- grain
-- vegetables
-- fruit
-- salt
-- animal feed
-- hay
-- household goods
-- consumption by turn
-- spoilage
-- emergency market purchases
-- ration quality interacting with health and unrest
-
-### Livestock depth
-- breeding
-- births
-- age
-- death
-- illness
-- milk
-- eggs
-- meat
-- wool
-- hides
-- draft animals
-- carrying capacity
-- winter feed
-- market sales
-- veterinary care
-
-### Field condition
-- named or numbered fields
-- fertility
-- soil moisture
-- erosion
-- previous crop
-- fallow periods
-- crop rotation
-- pest pressure
-- disease pressure
-- soil-improving crops
-- drainage
-
-## Poker hardening slice
+## Next build slice — poker hardening
 
 - proper reopened betting after raises
 - proper all-in behavior
@@ -160,11 +115,9 @@ The current estate economy works, but several costs are still aggregated. The ne
 - long-term statistics
 - social consequences
 
-The long-term rule remains that the game does not protect the player from financial recklessness. If enough credit and a sufficiently wealthy table exist, the player should be capable of gambling away a fortune.
+The game will not protect the player from reckless gambling. If credit and a sufficiently wealthy table exist, the player should be capable of losing a fortune.
 
 ## Agriculture expansion slice
-
-The crop system is now broader but still only the beginning.
 
 ### Additional crop database
 - vegetables
@@ -270,8 +223,6 @@ The crop system is now broader but still only the beginning.
 
 ## Associations and societies slice
 
-Use historically appropriate names rather than generic "guild" terminology.
-
 - agricultural societies
 - merchant associations
 - railroad interests
@@ -314,18 +265,14 @@ Player actions:
 - editorial positions
 - advertisements
 - land-for-sale notices
-- deaths
-- marriages
+- deaths and marriages
 - court notices
 - shipping arrivals
 - business failures
-- race previews
-- race tips and rumors
-- scratches
+- race previews, tips, rumors and scratches
 - election coverage
 - contradictory reporting
-- delayed national news
-- delayed foreign news
+- delayed national and foreign news
 - selectable archived issues
 
 ## Character and memory slice
@@ -350,50 +297,39 @@ Player actions:
 - named owners and trainers
 - buying and selling horses
 - player-owned stable
-- breeding
-- pedigrees
+- breeding and pedigrees
 - training schedules
 - jockey contracts
-- entry fees
-- purses
-- race classes
-- eligibility
-- serious injuries
-- retirement
+- entry fees and purses
+- race classes and eligibility
+- serious injuries and retirement
 - seasonal race calendar
 - stable reputation
-- Exacta
-- Quinella
-- Daily Double
+- Exacta, Quinella and Daily Double
 - public betting movement
 - bookmaker liquidity
 
 ## Historical pressure and long timeline
 
-The outside world should increasingly interfere with estate plans rather than appearing only as scripted flavor text.
+The outside world should increasingly interfere with estate plans rather than appearing only as flavor text.
 
 - regional commodity cycles
 - banking panics
 - transportation change
 - railroad expansion
 - legal change
-- taxes
-- elections
+- taxes and elections
 - sectional conflict
 - trade disruption
-- shortages
-- inflation
+- shortages and inflation
 - military mobilization
 - conscription pressure where applicable
 - requisition
 - property destruction
 - labor disruption
 - Civil War
-- postwar legal change
-- postwar labor change
+- postwar legal and labor change
 - postwar credit and land restructuring
-
-The Civil War era should alter prices, labor, transportation, credit, law, politics and risk across the simulation.
 
 ## Later technical systems
 
@@ -404,7 +340,7 @@ The Civil War era should alter prices, labor, transportation, credit, law, polit
 - family history screen
 - more ports
 - regional price differences
-- dynamic county data view without turning the game into a city builder
+- dynamic county data view without becoming a city builder
 
 ## Design rules
 
@@ -413,13 +349,13 @@ The Civil War era should alter prices, labor, transportation, credit, law, polit
 3. Every acre has an opportunity cost.
 4. The player cannot plant or own everything simply by expanding forever.
 5. Assets, income and cash are different things.
-6. Running a large estate should require continuous money, labor, food, maintenance and judgment.
-7. Important outcomes come from interacting systems rather than one hidden morality or success score.
+6. Running a large estate requires continuous money, labor, food, maintenance and judgment.
+7. Important outcomes come from interacting systems rather than one hidden success score.
 8. The world changes outside the player's property.
 9. Information can be incomplete, delayed, biased or wrong.
 10. The game does not protect the player from bad financial decisions.
 11. Wealth creates new opportunities and new ways to fail.
 12. Reputation is audience-specific.
 13. Historical terminology should fit the time and place.
-14. Persistent entities should accumulate history rather than constantly respawning without memory.
-15. Economic failure should alter the player's life rather than automatically ending the save.
+14. Persistent entities accumulate history rather than respawning without memory.
+15. Economic failure alters the player's life rather than automatically ending the save.

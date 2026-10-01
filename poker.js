@@ -78,4 +78,11 @@
   init();
 })();
 
-const estateModule=document.createElement('script');estateModule.src='estate.js';document.body.appendChild(estateModule);
+const estateModule=document.createElement('script');
+estateModule.src='estate.js';
+estateModule.onload=()=>{
+  const version=document.querySelector('.sidebar-footer span:first-child');if(version)version.textContent='Prototype v0.5-dev';
+  const advance=document.getElementById('advanceTurn');
+  if(advance){const estateAdvance=advance.onclick;advance.onclick=()=>{const modal=document.getElementById('decisionModal');if(modal&&!modal.classList.contains('hidden'))return toast('Resolve the pending decision first.');estateAdvance();}}
+};
+document.body.appendChild(estateModule);

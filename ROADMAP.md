@@ -2,7 +2,7 @@
 
 Georgia Sun is being built by consuming this roadmap one slice at a time. When a system becomes playable, it moves out of the wish list and into the live-build documentation.
 
-## Live now — v0.6-dev
+## Live now — v0.7-dev
 
 ### Core simulation
 - 4 turns per month / 48 turns per year
@@ -28,43 +28,13 @@ Georgia Sun is being built by consuming this roadmap one slice at a time. When a
 
 ### Operating estate depth
 - consumable stores for meat, flour, grain, vegetables, fruit, salt, feed, hay and household goods
-- turn-by-turn consumption
-- internal production offsets
-- spoilage
-- emergency market purchases at a premium
+- turn-by-turn consumption, internal production offsets, spoilage and emergency purchases
 - shortage effects on food, health and unrest
 - detailed recurring operating ledger
-- clothing and cloth
-- shoes
-- tools
-- nails and hardware
-- wagon repair
-- harness and tack
-- seed reserve
-- medical expense
-- veterinary expense
-- fuel / firewood
-- building maintenance
-- mill maintenance
-- freight
-- merchant commissions
-- taxes and assessments
-- interest expense
-- hired specialists
 - named field management blocks
-- fertility
-- soil moisture
-- erosion
-- previous crop
-- fallow periods
-- rotation
-- pest pressure
-- disease pressure
+- fertility, soil moisture, erosion, previous crop, fallow, rotation, pests and disease
 - soil-improving peas and beans
-- livestock age, health, births and deaths
-- carrying pressure
-- milk, eggs, wool and hides
-- feed and hay demand
+- livestock age, health, births, deaths, carrying pressure and products
 
 See `docs/ESTATE_ECONOMY.md` and `docs/OPERATING_ESTATE.md`.
 
@@ -89,51 +59,60 @@ See `docs/ESTATE_ECONOMY.md` and `docs/OPERATING_ESTATE.md`.
 See `docs/HORSE_RACING.md`.
 
 ### Poker and leisure
-- playable AI Texas Hold'em prototype
-- three county AI opponents
-- estate-funded buy-ins
-- blinds, flop, turn and river
-- fold, check/call and raise
-- hand evaluation and showdown
+- four-player AI Texas Hold'em table
+- rotating dealer / small blind / big blind
+- proper betting order by street
+- fold, check/call, raise and all-in
+- raises reopen action correctly
+- contribution-based main and side pots
+- stack-aware AI with distinct aggression, bluff and patience tendencies
+- persistent named opponents
+- opponent career memory
+- player aggression tracking
+- career hand history and statistics
+- unrestricted buy-in up to current estate cash
+- **Buy In With All Cash** option
+- gambling losses tied directly to estate liquidity
 - chess, checkers and backgammon
 
-## Next build slice — poker hardening
+See `docs/POKER.md`.
 
-- proper reopened betting after raises
-- proper all-in behavior
-- side pots
-- stack-aware AI
-- stronger bluff and value-bet logic
-- persistent named opponents
-- opponent memory
-- tells and tendencies
-- private games
-- table stakes by venue
-- gambling debts
-- creditor pressure
-- hand history
-- long-term statistics
-- social consequences
+## Next build slice — agriculture expansion
 
-The game will not protect the player from reckless gambling. If credit and a sufficiently wealthy table exist, the player should be capable of losing a fortune.
-
-## Agriculture expansion slice
+The crop system now has real acreage pressure and field condition, so the next slice should make crop choice substantially broader and more seasonal rather than simply adding more names.
 
 ### Additional crop database
-- vegetables
-- berries and small fruit
-- orchard crops
-- nuts
-- herbs
-- medicinal plants
+- cabbage
+- turnips
+- carrots
+- onions
+- squash
+- pumpkins
+- cucumbers
+- tomatoes where historically appropriate to the selected year/use
+- okra
+- collards / greens
+- apples
+- peaches
+- pears
+- plums
+- grapes
+- blackberries
+- raspberries where locally appropriate
+- pecans / other nuts where historically appropriate
+- culinary herbs
+- medicinal herbs
 - wetland plants
 - specialty / imported crops
 - marsh-mallow (`Althaea officinalis`)
 
-### Crop data still needed
+### Crop data model
+Each crop should track as many of these as useful rather than relying on one generic yield number:
+
 - planting window
 - harvest window
 - time to maturity
+- suitable land classes
 - soil preference
 - drainage requirement
 - water demand
@@ -144,14 +123,25 @@ The game will not protect the player from reckless gambling. If credit and a suf
 - seed / propagation cost
 - storage life
 - spoilage
-- pests
-- disease
+- pest vulnerability
+- disease vulnerability
 - processing uses
 - food value
 - feed value
 - soil effects
 - local price
 - export price
+- perennial vs annual behavior
+
+### Seasonal decision pressure
+- crops unavailable outside realistic planting windows
+- missed planting windows matter
+- multi-turn crops occupy acreage while growing
+- harvest timing matters
+- orchards require years to mature
+- weather can make one crop attractive and another foolish
+- acreage, labor, cash and storage jointly limit diversification
+- player cannot simply plant one acre of everything with no operational consequence
 
 ## Production-chain slice
 
@@ -189,6 +179,9 @@ The game will not protect the player from reckless gambling. If credit and a suf
 - merchant credit
 - crop liens / advances where historically appropriate
 - rumors and incomplete financial information
+- direct gambling credit / markers
+- unpaid gambling debt
+- creditor pressure tied to gambling losses
 
 ## Living county slice
 
@@ -308,6 +301,21 @@ Player actions:
 - Exacta, Quinella and Daily Double
 - public betting movement
 - bookmaker liquidity
+
+## Poker social-depth slice
+
+The rules engine is now hardened. Remaining poker work should connect the table more deeply to county life rather than rebuilding basic poker mechanics.
+
+- multiple venues with different stakes
+- private games and invitations
+- opponent relationships outside poker
+- remembered showdowns and player notes
+- tells and tilt
+- drunken play
+- cheating accusations
+- social reputation effects
+- richer adaptive AI
+- period-appropriate alternate poker variants after historical research
 
 ## Historical pressure and long timeline
 

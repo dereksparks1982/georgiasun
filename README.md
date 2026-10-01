@@ -4,32 +4,36 @@
 
 > **Proprietary software — All Rights Reserved.** This repository is public for access to the hosted web app and source visibility only. No open-source license is granted. Commercial use, redistribution, modification, derivative works, sublicensing, or reuse of the source or project materials is not authorized except for the limited platform-level rights required by GitHub's Terms of Service. See [`LICENSE`](LICENSE).
 
-A browser-based historical estate, market, and finance simulation prototype.
+Georgia Sun is a browser-based historical economic, estate, community, and life simulation set in a fictional 19th-century Georgia county.
 
-## Current prototype
+## Current prototype — v0.2
 
-Georgia Sun is intentionally **menu-driven**, not a city builder. The main loop is:
+Georgia Sun is intentionally **menu-driven**, not a city builder. The player is meant to live inside the county economy over a long save, making financial, agricultural, social, industrial, and political choices while the surrounding world develops independently.
 
-1. Read imperfect forecasts, market gossip, and price movement.
-2. Allocate acreage and commit money to seed and production.
-3. Advance one month.
-4. Weather, markets, equipment, health, labor, and random events alter the outcome.
-5. React through finance, planting, estate improvements, sugar production, and trade.
+### Time
 
-The prototype currently includes:
+- 4 turns per month: Early, Mid, Late, Month End
+- 48 turns per year
+- designed for long sessions and slow character aging
 
-- monthly turn progression
-- cash, debt, estate value, revenue, expenses, and ledger
+### Current systems
+
+- cash, debt, estate value, revenue, expenses, and month-end ledger
 - fluctuating seed and commodity prices
-- almanac-style seasonal forecasts that may be wrong
-- heat, drought, wet-season, and ideal-weather outcomes
-- crop allocation for cotton, sugar cane, corn, and rice
-- crop-specific weather sensitivity
-- estate land and building improvements
-- labor, rations, health, injuries, and medical-care decisions
-- sugar mill production, maintenance, and injury risk
-- abstract shipping/trade missions from Savannah
-- random events and decision popups
+- imperfect almanac-style forecasts and merchant gossip
+- weather outcomes including heat, drought, wet periods, and ideal seasons
+- cotton, sugar cane, corn, and rice acreage management
+- sugar production
+- timber and sawmill system with woodland depletion
+- apiary with honey and beeswax production
+- gristmill and bakery production chains
+- shipping missions from Savannah
+- labor, food, health, injury, trust, fear, resentment, and unrest variables
+- separate public reputation with planters, merchants, officials, and townspeople
+- horse-race wagering
+- poker, chess, checkers, and backgammon side activities
+- generated newspaper every turn with county news, business, society, agriculture, markets, and an archive
+- random private events and decision popups
 - responsive desktop/mobile interface
 
 ## Run locally
@@ -38,16 +42,16 @@ Open `index.html` in a modern browser. No build step or backend is required.
 
 ## GitHub Pages
 
-Live app: https://dereksparks1982.github.io/georgiasun/
+**Live app:** https://dereksparks1982.github.io/georgiasun/
 
-The repository is static and ready for GitHub Pages. Use:
+GitHub Pages configuration:
 
 - Branch: `main`
 - Folder: `/ (root)`
 
-## Project direction
+## Roadmap
 
-The prototype is a systems skeleton. Planned depth can include named characters, merchants and haggling, weather history, soil quality, contracts, loans, crop futures, property taxes, detailed inventories, household finances, legal changes, regional events, more shipping routes, and save/load support.
+See [`ROADMAP.md`](ROADMAP.md) for implemented, next, and long-term systems.
 
 ## License
 

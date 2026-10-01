@@ -1,5 +1,7 @@
 # Georgia Sun
 
+**Play the web app:** https://dereksparks1982.github.io/georgiasun/
+
 A browser-based historical estate, market, and finance simulation prototype.
 
 ## Current prototype
@@ -33,6 +35,8 @@ The prototype currently includes:
 Open `index.html` in a modern browser. No build step or backend is required.
 
 ## GitHub Pages
+
+Live app: https://dereksparks1982.github.io/georgiasun/
 
 The repository is static and ready for GitHub Pages. Use:
 

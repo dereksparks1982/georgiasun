@@ -6,7 +6,7 @@
 
 Georgia Sun is a browser-based historical economic, estate, community, and life simulation set in a fictional 19th-century Georgia county.
 
-## Current prototype — v0.5-dev
+## Current prototype — v0.6-dev
 
 Georgia Sun is intentionally **menu-driven**, not a city builder. The player is meant to live inside the county economy over a long save, making financial, agricultural, social, industrial, gambling, and political choices while the surrounding world develops independently.
 
@@ -21,18 +21,22 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 - cash, debt, estate value, revenue, expenses, and month-end ledger
 - fluctuating seed and commodity prices
 - imperfect almanac-style forecasts and merchant gossip
-- weather outcomes including heat, drought, wet periods, and ideal seasons
+- heat, drought, wet periods, and ideal seasons
 - finite estate expansion with a current 10,000-acre single-estate ceiling
 - land divided into cultivated fields, woodland, pasture, wetland/low ground, orchard/garden, and infrastructure
 - multiple competing uses inside pasture, woodland, wetland, and orchard/garden acreage
-- cultivated acreage shared across all crops so every planting choice has an opportunity cost
+- cultivated acreage shared across all crops
 - cotton, sugar cane, corn, rice, wheat, oats, barley, rye, potatoes, sweet potatoes, field peas, beans, strawberries, and melons
-- recurring estate provisioning costs influenced by population, internally produced food, livestock, stored grain, and hay
-- livestock management for cattle, goats, sheep, pigs, and chickens
-- recurring estate maintenance/tax/livestock overhead
+- operating stores for meat, flour, grain, vegetables, fruit, salt, animal feed, hay, and household goods
+- consumption, spoilage, internal production, shortages, and premium emergency market purchases
+- detailed operating costs for clothing, shoes, tools, hardware, wagon repair, tack, seed reserve, medical/veterinary expense, fuel, building/mill upkeep, freight, merchant commissions, taxes, interest, and specialists
+- named field management blocks with fertility, moisture, erosion, previous crop, pests, disease, fallow periods, and crop rotation
+- peas/beans as soil-improving crops and fallow recovery
+- livestock lifecycle simulation for cattle, goats, sheep, pigs, and chickens
+- livestock health, age, births, deaths, carrying pressure, milk, eggs, wool, hides, feed and hay demand
+- recurring estate maintenance and provisioning pressure
 - solvency states from Healthy through Default
-- estate-backed borrowing and leverage limits
-- sustained-arrears foreclosure with the save continuing after property loss
+- estate-backed borrowing, leverage limits, sustained-arrears foreclosure, and play continuing after property loss
 - sugar production
 - timber and sawmill system with woodland depletion
 - apiary with honey and beeswax production
@@ -46,7 +50,7 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 - dynamic horse form, age, fitness, fatigue, confidence, injury, career records, and changing odds
 - Win / Place / Show wagering
 - AI Texas Hold'em table with estate-funded buy-ins and three county opponents
-- poker card faces now display `10` rather than programmer shorthand `T`
+- poker card faces display `10` rather than programmer shorthand `T`
 - chess, checkers, and backgammon side activities
 - random private events and decision popups
 - responsive desktop/mobile interface
@@ -54,6 +58,7 @@ Georgia Sun is intentionally **menu-driven**, not a city builder. The player is 
 ## Design documentation
 
 - [`docs/ESTATE_ECONOMY.md`](docs/ESTATE_ECONOMY.md) — land, provisions, livestock, liquidity, debt, foreclosure, and crop opportunity cost
+- [`docs/OPERATING_ESTATE.md`](docs/OPERATING_ESTATE.md) — operating stores, detailed expenses, livestock cycles, field condition, rotation, and soil pressure
 - [`docs/HORSE_RACING.md`](docs/HORSE_RACING.md) — persistent racing circuit, race limits, horse development, and odds
 - [`ROADMAP.md`](ROADMAP.md) — remaining build slices
 
